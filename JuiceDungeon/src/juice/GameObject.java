@@ -42,4 +42,19 @@ public class GameObject {
         
     }
 
+    public void setXVelocity(int v) {
+        xVelocity = v;
+    }
+    
+    public void setYVelocity(int v) {
+        yVelocity = v;
+    }
+    
+    public int getXVelocity() {
+        return xVelocity;
+    }
+    
+    public int getYVelocity() {
+        return yVelocity;
+    }
 }
