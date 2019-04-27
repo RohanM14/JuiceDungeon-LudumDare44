@@ -17,4 +17,15 @@ package juice;
  */
 public enum Weapon {
 
+    DAGGER(1), KATANA(2), MEAT_STICK(3);
+    
+    Weapon(int range) {
+        this.range = range;
+    }
+    
+    private final int range;
+    
+    public int getRagne() {
+        return range;
+    }
 }
