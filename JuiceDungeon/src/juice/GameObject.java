@@ -37,5 +37,9 @@ public class GameObject {
         x += xVelocity;
         y += yVelocity;
     }
+    
+    public void draw() {
+        
+    }
 
 }
