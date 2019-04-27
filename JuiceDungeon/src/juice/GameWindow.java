@@ -13,22 +13,19 @@ import java.awt.Canvas;
 import javax.swing.JFrame;
 
 /**
- * Runs the game loop
+ * Displays the game window
  *
  * @author Kyle Bowman (kjbowman00)
  * @version 04/27/2019
  */
-public class GameRunner {
-
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        //Create window
-        GameWindow window = new GameWindow();
-        
-        //Run game loop
-
+public class GameWindow extends Canvas{
+    public GameWindow() {
+        JFrame frame = new JFrame("Juice Dungeon");
+        this.setSize(800, 600);
+        frame.add(this);
+        frame.pack();
+        frame.setVisible(true);
     }
-
+    
+    //TODO: Add drawing functions for images, squares, whatever
 }
