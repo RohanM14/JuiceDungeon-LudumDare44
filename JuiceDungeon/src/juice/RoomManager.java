@@ -12,6 +12,7 @@ package juice;
 import java.awt.Canvas;
 import java.awt.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 
 /**
@@ -25,12 +26,19 @@ public class RoomManager {
     private ArrayList<GameObject> gameObjects;
     private Player player;
     private Canvas canvas;
+    private ArrayList<Wall> walls;
+    private Room room;
 
 
     public RoomManager(Canvas canvas) {
         this.canvas = canvas;
         gameObjects = new ArrayList<GameObject>();
         this.player = new Player(50, 50);
+        room = new Room(0, null, null, null, null);
+        room.createWalls();
+        for (int i = 0; i < room.getWalls().size(); i++) {
+            gameObjects.add(room.getWalls().get(i));
+        }
         gameObjects.add(player);
     }
     
