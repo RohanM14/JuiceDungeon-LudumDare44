@@ -42,9 +42,10 @@ public class GameRunner {
 
         // Run game loop
         long frameCounter = 0;
+        long previousTime = System.nanoTime();
         while (true) {
-            long previousTime = System.nanoTime();
             long deltaTime = System.nanoTime() - previousTime;
+            previousTime = System.nanoTime();
             frameCounter += deltaTime;
             roomManager.tick(deltaTime);
 
