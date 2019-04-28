@@ -25,9 +25,31 @@ public class Room {
     public Room west;
     public int roomNum;
     public ArrayList<GameObject> contents;
+    public ArrayList<Wall> walls;
     
-    public Room(int num) {
+    
+    public Room(int num, Room n, Room e, Room s, Room w) {
+        north = n;
+        east = e;
+        south = s;
+        west = w;
         roomNum = num;
+    }
+    
+    public void createWalls() {
+        SpriteLocation loc = new SpriteLocation(100, 0, 100, 100);
+        for (int i = 0; i < 12; i++) {
+            Wall top = new Wall(i*100, 0, loc);
+            Wall bottom = new Wall(i*100, 1100, loc);
+            walls.add(top);
+            walls.add(bottom);
+        }
+        for (int j = 1; j < 10; j++) {
+            Wall left = new Wall(0, j*100, loc);
+            Wall right = new Wall(1100, j*100, loc);
+            walls.add(right);
+            walls.add(left);
+        }
     }
     
     public void addObject(GameObject obj) {

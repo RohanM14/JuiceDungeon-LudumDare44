@@ -26,5 +26,7 @@ public class Wall extends GameObject {
         super(startX, startY, location);
         // TODO Auto-generated constructor stub
     }
+    
+    
 
 }
