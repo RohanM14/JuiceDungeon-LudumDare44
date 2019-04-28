@@ -15,16 +15,7 @@ package juice;
  * @author Rohan Muthukumar rohanm14
  * @version 04/27/2019
  */
-public class Item extends GameObject {
+public enum ENUMItem {
 
-    /**
-     * @param startX
-     * @param startY
-     * @param location
-     */
-    public Item(int startX, int startY, SpriteLocation location) {
-        super(startX, startY, location);
-        // TODO Auto-generated constructor stub
-    }
-
+    DAMAGE_BOOST, SPEED_BOOST, HEALTH_BOOST, EXPOSIVE;
 }
