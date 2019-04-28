@@ -15,6 +15,16 @@ package juice;
  * @author Rohan Muthukumar rohanm14
  * @version 04/27/2019
  */
-public class Weapon {
+public class Weapon extends GameObject {
+
+    /**
+     * @param startX
+     * @param startY
+     * @param location
+     */
+    public Weapon(int startX, int startY, SpriteLocation location) {
+        super(startX, startY, location);
+        // TODO Auto-generated constructor stub
+    }
 
 }

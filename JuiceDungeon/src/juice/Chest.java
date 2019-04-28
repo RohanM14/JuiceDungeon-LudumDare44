@@ -15,10 +15,20 @@ package juice;
  * @author Rohan Muthukumar rohanm14
  * @version 04/27/2019
  */
-public class Chest {
+public class Chest extends GameObject {
 
+    
     public GameObject contents;
     private int health = 1;
-    
+    /**
+     * @param startX
+     * @param startY
+     * @param location
+     */
+    public Chest(int startX, int startY, SpriteLocation location, GameObject item) {
+        super(startX, startY, location);
+        contents = item;
+        // TODO Auto-generated constructor stub
+    }  
     
 }

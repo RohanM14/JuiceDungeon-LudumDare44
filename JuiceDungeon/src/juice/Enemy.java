@@ -15,6 +15,16 @@ package juice;
  * @author Rohan Muthukumar rohanm14
  * @version 04/27/2019
  */
-public class Enemy {
+public class Enemy extends GameObject {
+
+    /**
+     * @param startX
+     * @param startY
+     * @param location
+     */
+    public Enemy(int startX, int startY, SpriteLocation location) {
+        super(startX, startY, location);
+        // TODO Auto-generated constructor stub
+    }
 
 }
