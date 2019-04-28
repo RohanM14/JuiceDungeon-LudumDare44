@@ -15,6 +15,10 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Shape;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 
 /**
  * Add the class description here.
@@ -23,6 +27,18 @@ import java.awt.Shape;
  * @author Kyle Bowman kjbowman00
  * @version 04/27/2019
  */
+@JsonTypeInfo(use = Id.NAME,
+include = JsonTypeInfo.As.PROPERTY,
+property = "type")
+@JsonSubTypes({
+@Type(value = Player.class),
+@Type(value = Enemy.class),
+@Type(value = Wall.class),
+@Type(value = Chest.class),
+@Type(value = Vendor.class),
+@Type(value = ObjectItem.class),
+@Type(value = ObjectWeapon.class),
+})
 public class GameObject {
 
     public double x;

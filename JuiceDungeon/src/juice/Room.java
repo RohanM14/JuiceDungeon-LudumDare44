@@ -9,7 +9,9 @@
  */
 package juice;
 
+import java.awt.Canvas;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Add the class description here.
@@ -35,6 +37,36 @@ public class Room {
         west = w;
         roomNum = num;
         walls = new ArrayList<Wall>();
+        contents = new ArrayList<GameObject>();
+    }
+    
+    public void tick(long deltaTime) {
+        Iterator<GameObject> iterator = contents.iterator();
+        Iterator<Wall> i2 = walls.iterator();
+        while (iterator.hasNext()) {
+            GameObject obj = iterator.next();
+            obj.tick(deltaTime);
+        }
+        while (i2.hasNext()) {
+            GameObject obj = i2.next();
+            obj.tick(deltaTime);
+        }
+    }
+    
+    public void draw(Canvas canvas) {
+        Iterator<GameObject> iterator = contents.iterator();
+        Iterator<Wall> i2 = walls.iterator();
+        while (iterator.hasNext()) {
+            GameObject obj = iterator.next();
+            obj.draw(canvas);
+        }
+        while (i2.hasNext()) {
+            GameObject obj = i2.next();
+            obj.draw(canvas);
+        }
+        canvas.getBufferStrategy().show();
+        canvas.getBufferStrategy().dispose();
+        canvas.createBufferStrategy(2);
     }
     
     public Wall[] createWalls() {

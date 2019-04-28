@@ -5,7 +5,16 @@
 	"south": 4,
 	"west": -1,
 	"contents": [
-		{},
+		{
+			"type" : "Player",
+			"x": 0,
+			"y": 10
+		},
+		{
+			"type" : "Player",
+			"x": 50,
+			"y": 10
+		}
 	]
 },
 {
@@ -16,9 +25,10 @@
 	"west": 0,
 	"contents": [
 		{
-			"type" : "net.davismol.jsonsubclassing.MySubItemA",
-			
-		},
+			"type" : "Player",
+			"x": 50,
+			"y": 10
+		}
 	]
 },
 {
