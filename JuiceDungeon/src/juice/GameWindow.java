@@ -34,6 +34,8 @@ public class GameWindow extends Canvas{
         frame.add(this);
         frame.pack();
         frame.setVisible(true);
+        frame.setIgnoreRepaint(true);
+        this.setIgnoreRepaint(true);
         this.createBufferStrategy(2);
     }
     
