@@ -51,8 +51,6 @@ public class GameObject {
     public void draw(Canvas canvas) {
         Graphics g = canvas.getBufferStrategy().getDrawGraphics();
         g.drawImage(sprite, (int)x, (int)y, canvas);
-        //g.dispose();
-        //canvas.getBufferStrategy().show();
     }
 
 

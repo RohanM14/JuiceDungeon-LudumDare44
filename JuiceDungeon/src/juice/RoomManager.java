@@ -45,7 +45,6 @@ public class RoomManager {
             GameObject obj = iterator.next();
             obj.draw(canvas);
         }
-        //canvas.paint(canvas.getGraphics());
         canvas.getBufferStrategy().show();
         canvas.getBufferStrategy().dispose();
         canvas.createBufferStrategy(2);
