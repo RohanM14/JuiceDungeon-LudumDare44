@@ -9,6 +9,7 @@
  */
 package juice;
 
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Shape;
@@ -38,8 +39,8 @@ public class GameObject {
         y += yVelocity;
     }
     
-    public void draw() {
-        
+    public void draw(Graphics g) {
+        g.drawLine(0, 0, 100, 100);
     }
 
     public void setXVelocity(int v) {

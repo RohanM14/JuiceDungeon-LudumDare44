@@ -24,8 +24,14 @@ public class GameRunner {
      * @param args
      */
     public static void main(String[] args) {
+        //Create room manager
+        RoomManager roomManager = new RoomManager();
         //Create window
-        GameWindow window = new GameWindow();
+        GameWindow window = new GameWindow(roomManager);
+        
+        while(true) {
+            System.out.println("HEY");
+        }
         
         //Run game loop
 

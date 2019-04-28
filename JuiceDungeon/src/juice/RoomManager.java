@@ -9,12 +9,29 @@
  */
 package juice;
 
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 /**
  * Add the class description here.
  *
  * @author Rohan Muthukumar rohanm14
+ * @author Kyle Bowman kjbowman00
  * @version 04/27/2019
  */
 public class RoomManager {
-
+    ArrayList<GameObject> gameObjects;
+    public RoomManager() {
+        gameObjects = new ArrayList<GameObject>();
+        //TODO: remove this later
+        GameObject temp = new GameObject(0, 0, null);
+        gameObjects.add(temp);
+    }
+    
+    public Iterator iterator() {
+        return gameObjects.iterator();
+    }
+    
+    
 }
