@@ -24,7 +24,6 @@ public class Player extends GameObject {
      */
     public Player(int startX, int startY, SpriteLocation location) {
         super(startX, startY, location);
-        // TODO Auto-generated constructor stub
     }
 
 }

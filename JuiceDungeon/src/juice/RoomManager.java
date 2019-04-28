@@ -22,16 +22,20 @@ import java.util.Iterator;
  * @version 04/27/2019
  */
 public class RoomManager {
-    ArrayList<GameObject> gameObjects;
-    Canvas canvas;
+    private ArrayList<GameObject> gameObjects;
+    private Player player;
+    private Canvas canvas;
 
 
     public RoomManager(Canvas canvas) {
         this.canvas = canvas;
         gameObjects = new ArrayList<GameObject>();
-        // TODO: remove this later
-        GameObject temp = new GameObject(0, 0, null);
-        gameObjects.add(temp);
+        this.player = new Player(50, 50, null);
+        gameObjects.add(player);
+    }
+    
+    public Player getPlayer() {
+        return player;
     }
 
 

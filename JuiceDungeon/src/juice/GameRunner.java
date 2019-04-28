@@ -28,6 +28,8 @@ public class GameRunner {
         GameWindow window = new GameWindow();
         // Create room manager
         RoomManager roomManager = new RoomManager(window);
+        InputManager input = new InputManager(roomManager.getPlayer());
+        window.addKeyListener(input);
         
         // Wait for window to load
         try {

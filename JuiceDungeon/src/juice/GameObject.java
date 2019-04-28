@@ -27,8 +27,8 @@ public class GameObject {
     public double x;
     public double y;
     //Velocity stored as boxes per second (100 pixels per second)
-    public double xVelocity = 0.1;
-    public double yVelocity = 0.1;
+    public double xVelocity = 0;
+    public double yVelocity = 0;
     public Shape sprite;
     
     public static final long TIME_SCALE = 900000l;
@@ -51,11 +51,11 @@ public class GameObject {
         g.fillOval((int)x, (int)y, 100, 100);
     }
 
-    public void setXVelocity(int v) {
+    public void setXVelocity(double v) {
         xVelocity = v;
     }
     
-    public void setYVelocity(int v) {
+    public void setYVelocity(double v) {
         yVelocity = v;
     }
     
