@@ -23,9 +23,7 @@ import javax.swing.JFrame;
  * @version 04/27/2019
  */
 public class GameWindow extends Canvas{
-    RoomManager roomManager;
-    public GameWindow(RoomManager roomManager) {
-        this.roomManager = roomManager;
+    public GameWindow() {
         JFrame frame = new JFrame("Juice Dungeon");
         frame.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent windowEvent){
@@ -38,17 +36,4 @@ public class GameWindow extends Canvas{
         frame.setVisible(true);
     }
     
-    //TODO: Add drawing functions for images, squares, whatever
-    public void paint() {
-        //Clear the canvas
-        Graphics g = this.getGraphics();
-        super.paint(g);
-        
-        //Draw all images from RoomManager
-        Iterator<GameObject> iterator = roomManager.iterator();
-        while (iterator.hasNext()) {
-            GameObject object = iterator.next();
-            object.draw(g);
-        }
-    }
 }

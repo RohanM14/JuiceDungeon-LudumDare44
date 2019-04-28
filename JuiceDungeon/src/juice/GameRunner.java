@@ -24,10 +24,11 @@ public class GameRunner {
      * @param args
      */
     public static void main(String[] args) {
+        // Create Window
+        GameWindow window = new GameWindow();
         // Create room manager
-        RoomManager roomManager = new RoomManager();
-        // Create window
-        GameWindow window = new GameWindow(roomManager);
+        RoomManager roomManager = new RoomManager(window);
+        
         // Wait for window to load
         try {
             Thread.sleep(1000);
@@ -35,10 +36,20 @@ public class GameRunner {
         catch (InterruptedException e) {
             e.printStackTrace();
         }
-        window.paint();
 
         // Run game loop
+        long frameCounter = 0;
+        while (true) {
+            long previousTime = System.nanoTime();
+            long deltaTime = System.nanoTime() - previousTime;
+            frameCounter += deltaTime;
+            roomManager.tick(deltaTime);
 
+            if (frameCounter >= 6000000) {
+                frameCounter = 0;
+                roomManager.paint();
+            }
+        }
     }
 
 }

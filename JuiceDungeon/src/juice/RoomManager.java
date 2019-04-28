@@ -9,6 +9,7 @@
  */
 package juice;
 
+import java.awt.Canvas;
 import java.awt.List;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -22,16 +23,34 @@ import java.util.Iterator;
  */
 public class RoomManager {
     ArrayList<GameObject> gameObjects;
-    public RoomManager() {
+    Canvas canvas;
+
+
+    public RoomManager(Canvas canvas) {
+        this.canvas = canvas;
         gameObjects = new ArrayList<GameObject>();
-        //TODO: remove this later
+        // TODO: remove this later
         GameObject temp = new GameObject(0, 0, null);
         gameObjects.add(temp);
     }
-    
-    public Iterator iterator() {
-        return gameObjects.iterator();
+
+
+    public void paint() {
+        canvas.paint(canvas.getGraphics());
+        Iterator<GameObject> iterator = gameObjects.iterator();
+        while (iterator.hasNext()) {
+            GameObject obj = iterator.next();
+            obj.draw(canvas.getGraphics());
+        }
     }
-    
-    
+
+
+    public void tick(long deltaTime) {
+        Iterator<GameObject> iterator = gameObjects.iterator();
+        while (iterator.hasNext()) {
+            GameObject obj = iterator.next();
+            obj.tick(deltaTime);
+        }
+    }
+
 }

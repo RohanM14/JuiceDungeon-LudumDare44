@@ -34,14 +34,14 @@ public class GameObject {
         sprite = new Rectangle(5, 5);
     }
     
-    public void tick() {
-        x += xVelocity;
-        y += yVelocity;
+    public void tick(long deltaTime) {
+        x += xVelocity * deltaTime;
+        y += yVelocity * deltaTime;
     }
     
     public void draw(Graphics g) {
         g.drawLine(0, 0, 100, 100);
-        g.drawRect(50, 50, 75, 75);
+        g.drawRect(x, y, 75, 75);
     }
 
     public void setXVelocity(int v) {
