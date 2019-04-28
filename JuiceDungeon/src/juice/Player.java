@@ -22,8 +22,8 @@ public class Player extends GameObject {
      * @param startY
      * @param location
      */
-    public Player(int startX, int startY, SpriteLocation location) {
-        super(startX, startY, location);
+    public Player(int startX, int startY) {
+        super(startX, startY, new SpriteLocation(0,0, 100, 100));
     }
 
 }

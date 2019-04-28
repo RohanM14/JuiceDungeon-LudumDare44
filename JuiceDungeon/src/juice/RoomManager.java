@@ -30,7 +30,7 @@ public class RoomManager {
     public RoomManager(Canvas canvas) {
         this.canvas = canvas;
         gameObjects = new ArrayList<GameObject>();
-        this.player = new Player(50, 50, null);
+        this.player = new Player(50, 50);
         gameObjects.add(player);
     }
     
@@ -40,13 +40,15 @@ public class RoomManager {
 
 
     public void paint() {
-        canvas.paint(canvas.getGraphics());
-        //canvas.repaint();
         Iterator<GameObject> iterator = gameObjects.iterator();
         while (iterator.hasNext()) {
             GameObject obj = iterator.next();
-            obj.draw(canvas.getGraphics());
+            obj.draw(canvas);
         }
+        canvas.paint(canvas.getGraphics());
+        canvas.getBufferStrategy().show();
+        canvas.getBufferStrategy().dispose();
+        canvas.createBufferStrategy(2);
     }
 
 

@@ -9,12 +9,34 @@
  */
 package juice;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+
 /**
- * Add the class description here.
+ * Manages sprites
  *
- * @author Rohan Muthukumar rohanm14
+ * @author Kyle Bowman (kjbowman00)
  * @version 04/27/2019
  */
 public class SpriteManager {
+    private static BufferedImage spriteSheet;
 
+
+    public static void setupSpriteSheet() {
+        try {
+            spriteSheet = ImageIO.read(new File("spritesheet.png"));
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static Image getSprite(SpriteLocation location) {
+        return spriteSheet.getSubimage(location.x, location.y, location.width,
+            location.length);
+    }
 }

@@ -9,6 +9,7 @@
  */
 package juice;
 
+import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -23,46 +24,53 @@ import java.awt.Shape;
  * @version 04/27/2019
  */
 public class GameObject {
-   
+
     public double x;
     public double y;
-    //Velocity stored as boxes per second (100 pixels per second)
+    // Velocity stored as boxes per second (100 pixels per second)
     public double xVelocity = 0;
     public double yVelocity = 0;
-    public Shape sprite;
-    
+    public Image sprite;
+
     public static final long TIME_SCALE = 900000l;
-    
+
+
     public GameObject(int startX, int startY, SpriteLocation location) {
         x = startX;
         y = startY;
-        sprite = new Rectangle(5, 5);
+        sprite = SpriteManager.getSprite(location);
     }
-    
+
+
     public void tick(long deltaTime) {
         x += xVelocity * ((double)deltaTime) / ((double)TIME_SCALE);
         y += yVelocity * ((double)deltaTime) / ((double)TIME_SCALE);
     }
-    
-    public void draw(Graphics g) {
-        g.setColor(Color.BLUE);
-        g.drawLine(0, 0, 100, 100);
-        g.drawOval((int)x, (int)y, 100, 100);
-        g.fillOval((int)x, (int)y, 100, 100);
+
+
+    public void draw(Canvas canvas) {
+        Graphics g = canvas.getBufferStrategy().getDrawGraphics();
+        g.drawImage(sprite, (int)x, (int)y, canvas);
+        //g.dispose();
+        //canvas.getBufferStrategy().show();
     }
+
 
     public void setXVelocity(double v) {
         xVelocity = v;
     }
-    
+
+
     public void setYVelocity(double v) {
         yVelocity = v;
     }
-    
+
+
     public double getXVelocity() {
         return xVelocity;
     }
-    
+
+
     public double getYVelocity() {
         return yVelocity;
     }

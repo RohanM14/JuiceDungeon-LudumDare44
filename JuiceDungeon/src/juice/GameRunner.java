@@ -24,6 +24,7 @@ public class GameRunner {
      * @param args
      */
     public static void main(String[] args) {
+        SpriteManager.setupSpriteSheet();
         // Create Window
         GameWindow window = new GameWindow();
         // Create room manager
@@ -41,13 +42,20 @@ public class GameRunner {
 
         // Run game loop
         long frameCounter = 0;
+        long tickCounter = 0;
         while (true) {
             long previousTime = System.nanoTime();
             long deltaTime = System.nanoTime() - previousTime;
             frameCounter += deltaTime;
+            tickCounter += deltaTime;
             roomManager.tick(deltaTime);
+            
+            if (tickCounter > 10000) {
+                tickCounter = 0;
+                roomManager.tick(deltaTime);
+            }
 
-            if (frameCounter >= 6000000) {
+            if (frameCounter >= 6000000l) {
                 frameCounter = 0;
                 roomManager.paint();
             }
