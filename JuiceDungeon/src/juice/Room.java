@@ -9,6 +9,8 @@
  */
 package juice;
 
+import java.util.ArrayList;
+
 /**
  * Add the class description here.
  *
@@ -22,9 +24,14 @@ public class Room {
     public Room east;
     public Room west;
     public int roomNum;
+    public ArrayList<GameObject> contents;
     
     public Room(int num) {
         roomNum = num;
+    }
+    
+    public void addObject(GameObject obj) {
+        contents.add(obj);
     }
     
     public Room getNorth() {
