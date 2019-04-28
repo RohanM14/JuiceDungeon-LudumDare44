@@ -24,16 +24,20 @@ public class GameRunner {
      * @param args
      */
     public static void main(String[] args) {
-        //Create room manager
+        // Create room manager
         RoomManager roomManager = new RoomManager();
-        //Create window
+        // Create window
         GameWindow window = new GameWindow(roomManager);
-        
-        while(true) {
-            System.out.println("HEY");
+        // Wait for window to load
+        try {
+            Thread.sleep(1000);
         }
-        
-        //Run game loop
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        window.paint();
+
+        // Run game loop
 
     }
 

@@ -41,6 +41,7 @@ public class GameObject {
     
     public void draw(Graphics g) {
         g.drawLine(0, 0, 100, 100);
+        g.drawRect(50, 50, 75, 75);
     }
 
     public void setXVelocity(int v) {

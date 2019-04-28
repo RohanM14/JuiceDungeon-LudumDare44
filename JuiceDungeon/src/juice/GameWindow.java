@@ -36,7 +36,6 @@ public class GameWindow extends Canvas{
         frame.add(this);
         frame.pack();
         frame.setVisible(true);
-        paint();
     }
     
     //TODO: Add drawing functions for images, squares, whatever
