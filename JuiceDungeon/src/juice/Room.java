@@ -43,7 +43,7 @@ public class Room {
         int current = 0;
         for (int i = 0; i < 12; i++) {
             Wall top = new Wall(i*100, 0, loc);
-            Wall bottom = new Wall(i*100, 1000, loc);
+            Wall bottom = new Wall(i*100, 900, loc);
             arrWalls[current] = top;
             current++;
             arrWalls[current] = bottom;

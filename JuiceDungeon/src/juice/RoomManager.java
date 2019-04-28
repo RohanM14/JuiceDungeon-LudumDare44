@@ -28,13 +28,15 @@ public class RoomManager {
     private Canvas canvas;
     private ArrayList<Wall> walls;
     private Room room;
+    private Room roomN;
 
 
     public RoomManager(Canvas canvas) {
         this.canvas = canvas;
         gameObjects = new ArrayList<GameObject>();
         this.player = new Player(50, 50);
-        room = new Room(0, null, null, null, null);
+       // roomN = new Room(1, null, null, null, null);
+        room = new Room(0, roomN, null, null, null);
         room.createWalls();
         for (int i = 0; i < room.getWalls().size(); i++) {
             gameObjects.add(room.getWalls().get(i));
