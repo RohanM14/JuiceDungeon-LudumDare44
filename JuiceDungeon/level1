@@ -1,12 +1,12 @@
-{
+[{
 	"roomNum": 0,
 	"north": null,
 	"east": 1,
 	"south": 4,
 	"west": null,
-	"contents": {
-	
-	}
+	"contents": [
+		{},
+	]
 },
 {
 	"roomNum": 1,
@@ -14,7 +14,7 @@
 	"east": null,
 	"south": 5,
 	"west": 0,
-	"contents": {
-	
-	}
-},
+	"contents": [
+		{},
+	]
+}]
