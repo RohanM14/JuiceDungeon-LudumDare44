@@ -19,16 +19,16 @@ import java.util.ArrayList;
  */
 public class Room {
 
-    public Room north;
-    public Room south;
-    public Room east;
-    public Room west;
+    public int north;
+    public int south;
+    public int east;
+    public int west;
     public int roomNum;
     public ArrayList<GameObject> contents;
     public ArrayList<Wall> walls;
     
     
-    public Room(int num, Room n, Room e, Room s, Room w) {
+    public Room(int num, int n, int e, int s, int w) {
         north = n;
         east = e;
         south = s;
@@ -41,40 +41,42 @@ public class Room {
         Wall[] arrWalls = new Wall[42];
         SpriteLocation loc = new SpriteLocation(100, 0, 100, 100);
         int current = 0;
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < 10; i++) {
             Wall top = new Wall(i*100, 0, loc);
-            Wall bottom = new Wall(i*100, 900, loc);
+            Wall bottom = new Wall(i*100, 700, loc);
             arrWalls[current] = top;
             current++;
             arrWalls[current] = bottom;
             current++;
         }
-        for (int j = 1; j < 10; j++) {
+        for (int j = 1; j < 8; j++) {
             Wall left = new Wall(0, j*100, loc);
-            Wall right = new Wall(1100, j*100, loc);
+            Wall right = new Wall(900, j*100, loc);
             arrWalls[current] = left;
             current++;
             arrWalls[current] = right;
             current++;
         }
-        if (north != null) {
+        if (north > 0) {
+            arrWalls[8] = null;
             arrWalls[10] = null;
-            arrWalls[12] = null;
         }
-        if (east != null) {
-            arrWalls[33] = null;
-            arrWalls[35] = null;
+        if (east > 0) {
+            arrWalls[27] = null;
+            arrWalls[29] = null;
         }
-        if (south != null) {
+        if (south > 0) {
+            arrWalls[9] = null;
             arrWalls[11] = null;
-            arrWalls[13] = null;
         }
-        if (west != null) {
-            arrWalls[32] = null;
-            arrWalls[34] = null;
+        if (west > 0) {
+            arrWalls[26] = null;
+            arrWalls[28] = null;
         }
         for (int x = 0; x < arrWalls.length - 1; x++) {
-            walls.add(arrWalls[x]);
+            if (arrWalls[x] != null) {
+                walls.add(arrWalls[x]);
+            }
         }
         return arrWalls;
     }
@@ -87,35 +89,19 @@ public class Room {
         contents.add(obj);
     }
     
-    public Room getNorth() {
+    public int getNorth() {
         return north;
     }
     
-    public void setNorth(Room n) {
-        north = n;
-    }
-    
-    public void setSouth(Room s) {
-        south = s;
-    }
-    
-    public void setWest(Room w) {
-        west = w;
-    }
-    
-    public void setEast(Room e) {
-        east = e;
-    
-    }
-    public Room getSouth() {
+    public int getSouth() {
         return south;
     }
     
-    public Room getEast() {
+    public int getEast() {
         return east;
     }
     
-    public Room getWest() {
+    public int getWest() {
         return west;
     }
     
