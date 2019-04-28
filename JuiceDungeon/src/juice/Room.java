@@ -63,7 +63,7 @@ public class Room {
         }
         if (east > 0) {
             arrWalls[27] = null;
-            arrWalls[29] = null;
+            arrWalls[25] = null;
         }
         if (south > 0) {
             arrWalls[9] = null;
@@ -71,7 +71,7 @@ public class Room {
         }
         if (west > 0) {
             arrWalls[26] = null;
-            arrWalls[28] = null;
+            arrWalls[24] = null;
         }
         for (int x = 0; x < arrWalls.length - 1; x++) {
             if (arrWalls[x] != null) {
