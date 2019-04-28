@@ -37,18 +37,43 @@ public class Room {
     }
     
     public void createWalls() {
+        Wall[] arrWalls = new Wall[44];
         SpriteLocation loc = new SpriteLocation(100, 0, 100, 100);
+        int current = 0;
         for (int i = 0; i < 12; i++) {
             Wall top = new Wall(i*100, 0, loc);
             Wall bottom = new Wall(i*100, 1100, loc);
-            walls.add(top);
-            walls.add(bottom);
+            arrWalls[current] = top;
+            current++;
+            arrWalls[current] = bottom;
+            current++;
         }
         for (int j = 1; j < 10; j++) {
             Wall left = new Wall(0, j*100, loc);
             Wall right = new Wall(1100, j*100, loc);
-            walls.add(right);
-            walls.add(left);
+            arrWalls[current] = left;
+            current++;
+            arrWalls[current] = right;
+            current++;
+        }
+        if (north != null) {
+            arrWalls[10] = null;
+            arrWalls[12] = null;
+        }
+        if (east != null) {
+            arrWalls[33] = null;
+            arrWalls[35] = null;
+        }
+        if (south != null) {
+            arrWalls[11] = null;
+            arrWalls[13] = null;
+        }
+        if (west != null) {
+            arrWalls[32] = null;
+            arrWalls[34] = null;
+        }
+        for (int x = 0; x < arrWalls.length; x++) {
+            walls.add(arrWalls[x]);
         }
     }
     
