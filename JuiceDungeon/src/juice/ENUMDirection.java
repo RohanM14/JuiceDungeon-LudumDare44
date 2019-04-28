@@ -15,10 +15,7 @@ package juice;
  * @author Rohan Muthukumar rohanm14
  * @version 04/27/2019
  */
-public class Chest {
+public enum ENUMDirection {
 
-    public GameObject contents;
-    private int health = 1;
-    
-    
+    NORTH, EAST, SOUTH, WEST;
 }
