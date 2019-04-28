@@ -18,7 +18,7 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 
 /**
- * Add the class description here.
+ * Manages the Rooms
  *
  * @author Rohan Muthukumar rohanm14
  * @author Kyle Bowman kjbowman00
