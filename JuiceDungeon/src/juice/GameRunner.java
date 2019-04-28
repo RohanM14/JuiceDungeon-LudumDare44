@@ -30,7 +30,7 @@ public class GameRunner {
         GameWindow window = new GameWindow(roomManager);
         // Wait for window to load
         try {
-            Thread.sleep(1000);
+            Thread.sleep(100);
         }
         catch (InterruptedException e) {
             e.printStackTrace();

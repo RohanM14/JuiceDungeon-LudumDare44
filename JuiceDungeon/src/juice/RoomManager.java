@@ -25,7 +25,7 @@ public class RoomManager {
     public RoomManager() {
         gameObjects = new ArrayList<GameObject>();
         //TODO: remove this later
-        GameObject temp = new GameObject(0, 0, null);
+        GameObject temp = new GameObject(100, 100, null);
         gameObjects.add(temp);
     }
     

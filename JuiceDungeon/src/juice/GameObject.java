@@ -9,6 +9,7 @@
  */
 package juice;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Rectangle;
@@ -24,8 +25,8 @@ public class GameObject {
    
     public int x;
     public int y;
-    public int xVelocity = 1;
-    public int yVelocity = 1;
+    public int xVelocity = 10;
+    public int yVelocity = 10;
     public Shape sprite;
     
     public GameObject(int startX, int startY, SpriteLocation location) {
@@ -40,8 +41,10 @@ public class GameObject {
     }
     
     public void draw(Graphics g) {
+        g.setColor(Color.BLUE);
         g.drawLine(0, 0, 100, 100);
-        g.drawRect(50, 50, 75, 75);
+        g.drawOval(x, y, 100, 100);
+        g.fillOval(x, y, 100, 100);
     }
 
     public void setXVelocity(int v) {
