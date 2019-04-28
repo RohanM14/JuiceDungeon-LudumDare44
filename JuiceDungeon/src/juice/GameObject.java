@@ -19,14 +19,15 @@ import java.awt.Shape;
  * Add the class description here.
  *
  * @author Rohan Muthukumar rohanm14
+ * @author Kyle Bowman kjbowman00
  * @version 04/27/2019
  */
 public class GameObject {
    
-    public int x;
-    public int y;
-    public int xVelocity = 10;
-    public int yVelocity = 10;
+    public double x;
+    public double y;
+    public double xVelocity = 0.00001;
+    public double yVelocity = 0.00001;
     public Shape sprite;
     
     public GameObject(int startX, int startY, SpriteLocation location) {
@@ -36,15 +37,17 @@ public class GameObject {
     }
     
     public void tick(long deltaTime) {
-        x += xVelocity * deltaTime;
-        y += yVelocity * deltaTime;
+        //x += xVelocity * deltaTime;
+        //y += yVelocity * deltaTime;
+        x += xVelocity;
+        y += yVelocity;
     }
     
     public void draw(Graphics g) {
         g.setColor(Color.BLUE);
         g.drawLine(0, 0, 100, 100);
-        g.drawOval(x, y, 100, 100);
-        g.fillOval(x, y, 100, 100);
+        g.drawOval((int)x, (int)y, 100, 100);
+        g.fillOval((int)x, (int)y, 100, 100);
     }
 
     public void setXVelocity(int v) {
@@ -55,11 +58,11 @@ public class GameObject {
         yVelocity = v;
     }
     
-    public int getXVelocity() {
+    public double getXVelocity() {
         return xVelocity;
     }
     
-    public int getYVelocity() {
+    public double getYVelocity() {
         return yVelocity;
     }
 }
