@@ -35,8 +35,8 @@ public class RoomManager {
     public RoomManager(Canvas canvas) {
         this.canvas = canvas;
         gameObjects = new ArrayList<GameObject>();
-        this.player = new Player(50, 50);
-        room = new Room(0, 1, -1, -1, -1);
+        this.player = new Player(100, 100);
+        room = new Room(0, 1, 2, 3, 4);
         room.createWalls();
         for (int i = 0; i < room.getWalls().size(); i++) {
             gameObjects.add(room.getWalls().get(i));

@@ -57,19 +57,19 @@ public class Room {
             arrWalls[current] = right;
             current++;
         }
-        if (north > 0) {
+        if (north >= 0) {
             arrWalls[8] = null;
             arrWalls[10] = null;
         }
-        if (east > 0) {
+        if (east >= 0) {
             arrWalls[27] = null;
             arrWalls[25] = null;
         }
-        if (south > 0) {
+        if (south >= 0) {
             arrWalls[9] = null;
             arrWalls[11] = null;
         }
-        if (west > 0) {
+        if (west >= 0) {
             arrWalls[26] = null;
             arrWalls[24] = null;
         }
