@@ -17,15 +17,33 @@ package juice;
  */
 public enum ENUMWeapon {
 
-    DAGGER(1), KATANA(2), MEAT_STICK(3);
+    DAGGER(1, 1, 1, 3), KATANA(3, 2, 1, 2), MEAT_STICK(5, 3, 5, 1);
     
-    ENUMWeapon(int range) {
+    ENUMWeapon(int damage, int range, int knockback, int speed) {
         this.range = range;
+        this.damage = damage;
+        this.knockback = knockback;
+        this.speed = speed;
     }
     
     private final int range;
+    private final int damage;
+    private final int knockback;
+    private final int speed;
     
-    public int getRagne() {
+    public int getRange() {
         return range;
+    }
+    
+    public int getDamage() {
+        return damage;
+    }
+    
+    public int getKnockback() {
+        return knockback;
+    }
+    
+    public int getSpeed() {
+        return speed;
     }
 }
