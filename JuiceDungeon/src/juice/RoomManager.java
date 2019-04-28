@@ -14,6 +14,8 @@ import java.awt.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonParser;
 
 /**
  * Add the class description here.
@@ -65,6 +67,10 @@ public class RoomManager {
             GameObject obj = iterator.next();
             obj.tick(deltaTime);
         }
+    }
+    
+    private void createRooms() {
+        JsonFactory parser = new JsonFactory();
     }
 
 }

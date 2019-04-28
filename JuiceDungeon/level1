@@ -15,6 +15,9 @@
 	"south": 5,
 	"west": 0,
 	"contents": [
-		{},
+		{
+			"type" : "net.davismol.jsonsubclassing.MySubItemA",
+			
+		},
 	]
 }]
