@@ -26,9 +26,12 @@ public class GameObject {
    
     public double x;
     public double y;
-    public double xVelocity = 0.00001;
-    public double yVelocity = 0.00001;
+    //Velocity stored as boxes per second (100 pixels per second)
+    public double xVelocity = 0.1;
+    public double yVelocity = 0.1;
     public Shape sprite;
+    
+    public static final long TIME_SCALE = 900000l;
     
     public GameObject(int startX, int startY, SpriteLocation location) {
         x = startX;
@@ -37,10 +40,8 @@ public class GameObject {
     }
     
     public void tick(long deltaTime) {
-        //x += xVelocity * deltaTime;
-        //y += yVelocity * deltaTime;
-        x += xVelocity;
-        y += yVelocity;
+        x += xVelocity * ((double)deltaTime) / ((double)TIME_SCALE);
+        y += yVelocity * ((double)deltaTime) / ((double)TIME_SCALE);
     }
     
     public void draw(Graphics g) {

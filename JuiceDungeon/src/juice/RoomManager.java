@@ -37,6 +37,7 @@ public class RoomManager {
 
     public void paint() {
         canvas.paint(canvas.getGraphics());
+        //canvas.repaint();
         Iterator<GameObject> iterator = gameObjects.iterator();
         while (iterator.hasNext()) {
             GameObject obj = iterator.next();
