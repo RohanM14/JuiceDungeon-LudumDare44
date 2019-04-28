@@ -34,15 +34,16 @@ public class Room {
         south = s;
         west = w;
         roomNum = num;
+        walls = new ArrayList<Wall>();
     }
     
-    public void createWalls() {
-        Wall[] arrWalls = new Wall[44];
+    public Wall[] createWalls() {
+        Wall[] arrWalls = new Wall[42];
         SpriteLocation loc = new SpriteLocation(100, 0, 100, 100);
         int current = 0;
         for (int i = 0; i < 12; i++) {
             Wall top = new Wall(i*100, 0, loc);
-            Wall bottom = new Wall(i*100, 1100, loc);
+            Wall bottom = new Wall(i*100, 1000, loc);
             arrWalls[current] = top;
             current++;
             arrWalls[current] = bottom;
@@ -72,9 +73,14 @@ public class Room {
             arrWalls[32] = null;
             arrWalls[34] = null;
         }
-        for (int x = 0; x < arrWalls.length; x++) {
+        for (int x = 0; x < arrWalls.length - 1; x++) {
             walls.add(arrWalls[x]);
         }
+        return arrWalls;
+    }
+    
+    public ArrayList<Wall> getWalls() {
+        return walls;
     }
     
     public void addObject(GameObject obj) {

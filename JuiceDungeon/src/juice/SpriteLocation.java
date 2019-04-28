@@ -28,4 +28,9 @@ public class SpriteLocation {
         length = spriteLength;
         width = spriteWidth;
     }
+    
+    @Override
+    public String toString() {
+        return String.valueOf(x) + ", " + String.valueOf(y) + ", " + String.valueOf(length) + ", " + String.valueOf(width); 
+    }
 }

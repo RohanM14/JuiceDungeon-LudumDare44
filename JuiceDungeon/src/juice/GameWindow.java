@@ -30,7 +30,7 @@ public class GameWindow extends Canvas{
                System.exit(0);
             }        
          });    
-        this.setSize(800, 600);
+        this.setSize(1200, 1200);
         frame.add(this);
         frame.pack();
         frame.setVisible(true);

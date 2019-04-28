@@ -17,6 +17,9 @@ package juice;
  */
 public class Wall extends GameObject {
 
+    public int x;
+    public int y;
+    public SpriteLocation loc;
     /**
      * @param startX
      * @param startY
@@ -24,7 +27,15 @@ public class Wall extends GameObject {
      */
     public Wall(int startX, int startY, SpriteLocation location) {
         super(startX, startY, location);
+        x = startX;
+        y = startY;
+        loc = location;
         // TODO Auto-generated constructor stub
+    }
+    
+    @Override
+    public String toString() {
+        return String.valueOf(x) + ", " + String.valueOf(y) + ", " + loc.toString();
     }
     
     
