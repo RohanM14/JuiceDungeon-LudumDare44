@@ -15,17 +15,6 @@ package juice;
  * @author Rohan Muthukumar rohanm14
  * @version 04/27/2019
  */
-public enum Weapon {
+public class Weapon {
 
-    DAGGER(1), KATANA(2), MEAT_STICK(3);
-    
-    Weapon(int range) {
-        this.range = range;
-    }
-    
-    private final int range;
-    
-    public int getRagne() {
-        return range;
-    }
 }

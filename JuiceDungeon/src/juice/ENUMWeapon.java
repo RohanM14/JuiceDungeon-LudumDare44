@@ -15,7 +15,17 @@ package juice;
  * @author Rohan Muthukumar rohanm14
  * @version 04/27/2019
  */
-public enum Direction {
+public enum ENUMWeapon {
 
-    NORTH, EAST, SOUTH, WEST;
+    DAGGER(1), KATANA(2), MEAT_STICK(3);
+    
+    ENUMWeapon(int range) {
+        this.range = range;
+    }
+    
+    private final int range;
+    
+    public int getRagne() {
+        return range;
+    }
 }
