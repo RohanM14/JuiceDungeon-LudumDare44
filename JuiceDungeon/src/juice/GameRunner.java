@@ -44,17 +44,18 @@ public class GameRunner {
         }
 
         // Run game loop
-        double drawCounter = 0;
+        long drawCounter = 0;
         // 60fps
         double drawTime = 1.0/ 60.0;
         long previousTime = System.nanoTime();
         while (true) {
-            deltaTime = ((double)(System.nanoTime() - previousTime)) / 1000000000.0d;
+            long nanoDeltaTime = System.nanoTime() - previousTime;
+            deltaTime = ((double)nanoDeltaTime) / 1000000000.0d;
             previousTime = System.nanoTime();
-            drawCounter += deltaTime;
+            drawCounter += nanoDeltaTime;
             roomManager.tick();
 
-            if (drawCounter >= drawTime) {
+            if (drawCounter >= 600000l) {
                 drawCounter = 0;
                 roomManager.paint();
             }

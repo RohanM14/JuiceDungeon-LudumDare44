@@ -26,7 +26,7 @@ public class InputManager implements KeyListener {
     private boolean upHeld;
     private boolean downHeld;
     private Player player;
-    private static final double PLAYER_SPEED = 1;
+    private static final double PLAYER_SPEED = 4;
     
     public InputManager(Player player) {
         this.player = player;

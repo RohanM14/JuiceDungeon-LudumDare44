@@ -46,8 +46,8 @@ public class GameObject {
 
 
     public void tick() {
-        x += xVelocity * GameRunner.deltaTime() * 1000;
-        y += yVelocity * GameRunner.deltaTime() * 1000;
+        x += xVelocity * GameRunner.deltaTime() * 100;
+        y += yVelocity * GameRunner.deltaTime() * 100;
     }
 
 
