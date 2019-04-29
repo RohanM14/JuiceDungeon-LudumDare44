@@ -19,6 +19,9 @@ import javax.swing.JFrame;
  * @version 04/27/2019
  */
 public class GameRunner {
+    
+    private static double deltaTime;
+    
 
     /**
      * @param args
@@ -41,19 +44,25 @@ public class GameRunner {
         }
 
         // Run game loop
-        long frameCounter = 0;
+        double drawCounter = 0;
+        // 60fps
+        double drawTime = 1.0/ 60.0;
         long previousTime = System.nanoTime();
         while (true) {
-            long deltaTime = System.nanoTime() - previousTime;
+            deltaTime = ((double)(System.nanoTime() - previousTime)) / 1000000000.0d;
             previousTime = System.nanoTime();
-            frameCounter += deltaTime;
-            roomManager.tick(deltaTime);
+            drawCounter += deltaTime;
+            roomManager.tick();
 
-            if (frameCounter >= 600000l) {
-                frameCounter = 0;
+            if (drawCounter >= drawTime) {
+                drawCounter = 0;
                 roomManager.paint();
             }
         }
+    }
+    
+    public static double deltaTime() {
+        return deltaTime;
     }
 
 }

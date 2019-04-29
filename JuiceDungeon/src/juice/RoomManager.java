@@ -33,7 +33,7 @@ public class RoomManager {
 
     public RoomManager(Canvas canvas) {
         this.canvas = canvas;
-        this.player = new Player(50, 50);
+        this.player = new Player(400, 400);
         rooms = LevelCreator.getRooms(1);
         room = rooms[0];
     }
@@ -49,9 +49,9 @@ public class RoomManager {
     }
 
 
-    public void tick(long deltaTime) {
-        room.tick(deltaTime);
-        player.tick(deltaTime);
+    public void tick() {
+        room.tick();
+        player.tick();
     }
     
 

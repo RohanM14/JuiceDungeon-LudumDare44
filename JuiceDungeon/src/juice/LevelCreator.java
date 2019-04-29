@@ -24,10 +24,10 @@ public class LevelCreator {
             rooms[0] = new Room(0,-1, 1, 4, -1 );
             Room l = rooms[0];
             l.createWalls();
-            l.addObject(new Player(10, 50));
-            l.addObject(new Player(100, 75));
-            l.addObject(new Player(175, 300));
-            l.addObject(new Player(500, 600));
+            l.addObject(new GruntEnemy(10, 50));
+            l.addObject(new GruntEnemy(100, 75));
+            l.addObject(new GruntEnemy(175, 300));
+            l.addObject(new GruntEnemy(500, 600));
         }
         return rooms;
     }

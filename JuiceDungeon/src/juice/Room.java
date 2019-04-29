@@ -40,16 +40,16 @@ public class Room {
         contents = new ArrayList<GameObject>();
     }
     
-    public void tick(long deltaTime) {
+    public void tick() {
         Iterator<GameObject> iterator = contents.iterator();
         Iterator<Wall> i2 = walls.iterator();
         while (iterator.hasNext()) {
             GameObject obj = iterator.next();
-            obj.tick(deltaTime);
+            obj.tick();
         }
         while (i2.hasNext()) {
             GameObject obj = i2.next();
-            obj.tick(deltaTime);
+            obj.tick();
         }
     }
     

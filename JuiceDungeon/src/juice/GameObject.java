@@ -27,18 +27,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
  * @author Kyle Bowman kjbowman00
  * @version 04/27/2019
  */
-@JsonTypeInfo(use = Id.NAME,
-include = JsonTypeInfo.As.PROPERTY,
-property = "type")
-@JsonSubTypes({
-@Type(value = Player.class),
-@Type(value = Enemy.class),
-@Type(value = Wall.class),
-@Type(value = Chest.class),
-@Type(value = Vendor.class),
-@Type(value = ObjectItem.class),
-@Type(value = ObjectWeapon.class),
-})
 public class GameObject {
 
     public double x;
@@ -48,7 +36,6 @@ public class GameObject {
     public double yVelocity = 0;
     public Image sprite;
 
-    public static final long TIME_SCALE = 900000l;
 
 
     public GameObject(int startX, int startY, SpriteLocation location) {
@@ -58,9 +45,9 @@ public class GameObject {
     }
 
 
-    public void tick(long deltaTime) {
-        x += xVelocity * ((double)deltaTime) / ((double)TIME_SCALE);
-        y += yVelocity * ((double)deltaTime) / ((double)TIME_SCALE);
+    public void tick() {
+        x += xVelocity * GameRunner.deltaTime() * 1000;
+        y += yVelocity * GameRunner.deltaTime() * 1000;
     }
 
 
