@@ -21,6 +21,7 @@ import javax.swing.JFrame;
 public class GameRunner {
     
     private static double deltaTime;
+    public static RoomManager roomManager;
     
 
     /**
@@ -31,7 +32,7 @@ public class GameRunner {
         // Create Window
         GameWindow window = new GameWindow();
         // Create room manager
-        RoomManager roomManager = new RoomManager(window);
+        roomManager = new RoomManager(window);
         InputManager input = new InputManager(roomManager.getPlayer());
         window.addKeyListener(input);
         

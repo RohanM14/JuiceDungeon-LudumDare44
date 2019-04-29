@@ -29,12 +29,12 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
  */
 public class GameObject {
 
-    public double x;
-    public double y;
+    private double x;
+    private double y;
     // Velocity stored as boxes per second (100 pixels per second)
-    public double xVelocity = 0;
-    public double yVelocity = 0;
-    public Image sprite;
+    private double xVelocity = 0;
+    private double yVelocity = 0;
+    private Image sprite;
 
 
 
@@ -74,5 +74,13 @@ public class GameObject {
 
     public double getYVelocity() {
         return yVelocity;
+    }
+    
+    public double getX() {
+        return x;
+    }
+    
+    public double getY() {
+        return y;
     }
 }
