@@ -21,7 +21,7 @@ public class LevelCreator {
     public static Room[] getRooms(int level) {
         Room[] rooms = new Room[16];
         if (level == 1) {
-            rooms[0] = new Room(0,-1, 1, 4, -1 );
+            rooms[0] = new Room(0, 2, 1, 4, 3 );
             Room l = rooms[0];
             l.createWalls();
             l.addObject(new GruntEnemy(10, 50));

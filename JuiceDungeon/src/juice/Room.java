@@ -75,13 +75,13 @@ public class Room {
         int current = 0;
         for (int i = 0; i < 10; i++) {
             Wall top = new Wall(i*100, 0, loc);
-            Wall bottom = new Wall(i*100, 700, loc);
+            Wall bottom = new Wall(i*100, 900, loc);
             arrWalls[current] = top;
             current++;
             arrWalls[current] = bottom;
             current++;
         }
-        for (int j = 1; j < 8; j++) {
+        for (int j = 1; j < 9; j++) {
             Wall left = new Wall(0, j*100, loc);
             Wall right = new Wall(900, j*100, loc);
             arrWalls[current] = left;
@@ -95,7 +95,7 @@ public class Room {
         }
         if (east >= 0) {
             arrWalls[27] = null;
-            arrWalls[25] = null;
+            arrWalls[29] = null;
         }
         if (south >= 0) {
             arrWalls[9] = null;
@@ -103,7 +103,7 @@ public class Room {
         }
         if (west >= 0) {
             arrWalls[26] = null;
-            arrWalls[24] = null;
+            arrWalls[28] = null;
         }
         for (int x = 0; x < arrWalls.length - 1; x++) {
             if (arrWalls[x] != null) {

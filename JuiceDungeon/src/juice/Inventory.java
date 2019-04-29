@@ -37,8 +37,20 @@ public class Inventory {
         return contents.get(current);
     }
     
+    public int getAmount() {
+        return amount.get(current);
+    }
+    
     public int nextItem() {
-        current++;
+        current = (current + 1) % 4;
         return current;
+    }
+    
+    public boolean removeItem() {
+        if (amount.get(current) <= 0) {
+            return false;
+        }
+        amount.set(current, amount.get(current) - 1);
+        return true;
     }
 }
